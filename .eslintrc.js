@@ -15,7 +15,7 @@ module.exports = {
       typescript: {},
     },
   },
-  plugins: ["jsx-a11y", "import"],
+  plugins: ["jsx-a11y", "simple-import-sort", "import"],
   extends: [
     "airbnb",
     "eslint:recommended",
@@ -33,6 +33,30 @@ module.exports = {
     "no-nested-ternary": ["off"],
     "no-use-before-define": "off",
     "eol-last": ["error", "always"],
+    "simple-import-sort/imports": [
+      "error",
+      {
+        groups: [
+          // Side effect imports.
+          ["^\\u0000"],
+          // Packages.
+          // Things that start with a letter (or digit or underscore), or `@` followed by a letter.
+          ["^@?\\w"],
+          // Internal packages.
+          ["^src/"],
+          // Absolute imports and other imports such as Vue-style `@/foo`.
+          // Anything not matched in another group.
+          ["^"],
+          // Relative imports.
+          // Anything that starts with a dot.
+          ["^\\."],
+        ],
+      },
+    ],
+    "simple-import-sort/exports": "error",
+    "import/first": "error",
+    "import/newline-after-import": "error",
+    "import/no-duplicates": "error",
     "import/prefer-default-export": "off",
     "import/extensions": [
       "error",
