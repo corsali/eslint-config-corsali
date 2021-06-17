@@ -33,6 +33,7 @@ module.exports = {
     "no-nested-ternary": ["off"],
     "no-use-before-define": "off",
     "eol-last": ["error", "always"],
+    "no-plusplus": ["error", { allowForLoopAfterthoughts: true }],
     "simple-import-sort/imports": [
       "error",
       {
@@ -70,6 +71,7 @@ module.exports = {
     ],
     "@typescript-eslint/no-unused-vars": ["error", { argsIgnorePattern: "^_" }],
     "@typescript-eslint/no-empty-interface": ["off"],
+    "@typescript-eslint/no-empty-function": ["off"],
     "react/jsx-filename-extension": [
       1,
       {
