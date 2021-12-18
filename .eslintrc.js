@@ -69,7 +69,14 @@ module.exports = {
         tsx: "never",
       },
     ],
-    "@typescript-eslint/no-unused-vars": ["error", { argsIgnorePattern: "^_" }],
+    "@typescript-eslint/no-unused-vars": [
+      "error",
+      {
+        argsIgnorePattern: "^_",
+        varsIgnorePattern: "^_",
+        caughtErrorsIgnorePattern: "^_",
+      },
+    ],
     "@typescript-eslint/no-empty-interface": ["off"],
     "@typescript-eslint/no-empty-function": ["off"],
     "react/jsx-filename-extension": [
